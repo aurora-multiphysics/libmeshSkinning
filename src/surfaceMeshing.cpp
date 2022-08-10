@@ -14,7 +14,7 @@ void isElementSurface(libMesh::Elem& element, std::set<int>& elSet,
         }
         else
         {
-            if(!std::binary_search(elSet.begin(), elSet.end(), neighbor->id()))
+            if(elSet.find(neighbor->id()) == elSet.end())
             {
                 surfaceFaces[neighbor_counter++] = side;
             }

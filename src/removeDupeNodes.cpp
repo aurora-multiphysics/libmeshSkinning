@@ -27,8 +27,8 @@ removeDupeNodes(libMesh::Mesh& mesh)
                 continue;
             }
 
-            else if(((*node_1)(0) == (*node_2)(0)) &&
-                    ((*node_1)(1) == (*node_2)(1)) &&
+            else if(abs((*node_1)(0) == (*node_2)(0)) < 1e-8 &&
+                    abs((*node_1)(1) == (*node_2)(1)) < 1e-8 &&
                     abs((*node_1)(2) - (*node_2)(2)) < 1e-8)
             {           
                 libMesh::dof_id_type old_id = id_1 > id_2 ? id_1 : id_2;

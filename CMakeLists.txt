@@ -46,7 +46,7 @@ set(libmesh_INCLUDE ${MOOSE_DIR}/libmesh/installed/include
     /usr/include/tirpc)
 
 FILE(GLOB projectSrc ./src/*)
-FILE(GLOB testSrc ./test/src/*.cpp)
+FILE(GLOB testSrc ./test/src/*)
 
 link_libraries(MPI::MPI_CXX igl::glfw igl::embree igl_copyleft::cgal igl_copyleft::tetgen igl_restricted::triangle igl::predicates)
 

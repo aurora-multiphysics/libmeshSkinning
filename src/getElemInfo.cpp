@@ -4,7 +4,6 @@ void
 getElemInfo(libMesh::ElemType& elem_type, libMesh::ElemType& face_type, 
             libMesh::Elem* element, int& num_elem_sides, int& num_face_nodes)
 {
-    std::cout << "Getting element type" << std::endl;
     elem_type = element->type();
     switch (elem_type)
     {
@@ -22,7 +21,6 @@ getElemInfo(libMesh::ElemType& elem_type, libMesh::ElemType& face_type,
             break;
         
         case (libMesh::TET4):
-            std::cout << "TET4 elems detected\n"; 
             num_elem_sides = 4;
             num_face_nodes = 3;
             face_type = libMesh::TRI3;
@@ -35,7 +33,6 @@ getElemInfo(libMesh::ElemType& elem_type, libMesh::ElemType& face_type,
             break;
         // 2D Elems
         case (3):
-            std::cout << "TRI3 elems detected" << std::endl;
             num_elem_sides = 3;
             num_face_nodes = 2;
             face_type = libMesh::EDGE2;
